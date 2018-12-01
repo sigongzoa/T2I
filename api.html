@@ -23,10 +23,10 @@ if (navigator.geolocation) {
         var lat = position.coords.latitude; // 위도
         var lon = position.coords.longitude; // 경도
         
-        var locPosition = new daum.maps.LatLng(lat, lon); // 좌표객체 생성
+        var locPosition = new daum.maps.LatLng(lat, lon); // 접속 위치 좌표 객체
 
 	// 접속 위치를 중심으로하는 지도생성
-	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div (실제로 띄우진 않음)
 	    mapOption = {
 	        center: locPosition,
         };  
