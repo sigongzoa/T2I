@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>geolocationìœ¼ë¡œ ë§ˆì»¤ í‘œì‹œí•˜ê¸°</title>
+    <title>geolocationÀ¸·Î ¸¶Ä¿ Ç¥½ÃÇÏ±â</title>
     
 </head>
 <body>
@@ -14,26 +14,37 @@
 
 var stop = 0;
 
-// geolocationì„ ì‚¬ìš©í•  ìˆ˜ ìˆëŠ”ì§€ í™•ì¸
+
+// geolocationÀ» »ç¿ëÇÒ ¼ö ÀÖ´ÂÁö È®ÀÎ
 if (navigator.geolocation) {
     
-    // GeoLocationì„ ì´ìš©í•´ì„œ ì ‘ì† ìœ„ì¹˜ë¥¼ ë°›ì•„ì˜´
+    // GeoLocationÀ» ÀÌ¿ëÇØ¼­ Á¢¼Ó À§Ä¡¸¦ ¹Ş¾Æ¿È
     navigator.geolocation.getCurrentPosition(function(position) {
         
-        var lat = position.coords.latitude; // ìœ„ë„
-        var lon = position.coords.longitude; // ê²½ë„
+        var lat = position.coords.latitude; // À§µµ
+        var lon = position.coords.longitude; // °æµµ
         
-        var locPosition = new daum.maps.LatLng(lat, lon); // ì ‘ì† ìœ„ì¹˜ ì¢Œí‘œ ê°ì²´
+        var locPosition = new daum.maps.LatLng(lat, lon); // ÁÂÇ¥°´Ã¼ »ı¼º
 
-	// ì ‘ì† ìœ„ì¹˜ë¥¼ ì¤‘ì‹¬ìœ¼ë¡œí•˜ëŠ” ì§€ë„ìƒì„±
-	var mapContainer = document.getElementById('map'), // ì§€ë„ë¥¼ í‘œì‹œí•  div (ì‹¤ì œë¡œ ë„ìš°ì§„ ì•ŠìŒ)
+	// Á¢¼Ó À§Ä¡¸¦ Áß½ÉÀ¸·ÎÇÏ´Â Áöµµ»ı¼º
+	var mapContainer = document.getElementById('map'), // Áöµµ¸¦ Ç¥½ÃÇÒ div 
 	    mapOption = {
 	        center: locPosition,
         };  
 	
 	var map = new daum.maps.Map(mapContainer, mapOption); 
 
-	// ìŒì‹ì ì„ ê²€ìƒ‰
+	// ÁÂÇ¥-ÁÖ¼Ò º¯È¯
+	var geocoder = new daum.maps.services.Geocoder();
+	var geocoderCB = function(result, status) {
+	    if (status === daum.maps.services.Status.OK) {
+	        document.write(result[0].address.region_1depth_name+' '+result[0].address.region_2depth_name+' '+result[0].address.region_3depth_name+'<br>');
+	    }
+	};
+
+	geocoder.coord2Address(locPosition.getLng(), locPosition.getLat(), geocoderCB);
+
+	// À½½ÄÁ¡À» °Ë»ö
 	var ps = new daum.maps.services.Places(map);
 
 	for(var i=1; i<10; i++) {
@@ -42,10 +53,10 @@ if (navigator.geolocation) {
     });
     
 } else {
-    document.write('geolocationì„ ì‚¬ìš©í•  ìˆ˜ ì—†ëŠ” í™˜ê²½ì…ë‹ˆë‹¤.');
+    document.write('geolocationÀ» »ç¿ëÇÒ ¼ö ¾ø´Â È¯°æÀÔ´Ï´Ù.');
 }
 
-// í‚¤ì›Œë“œ ê²€ìƒ‰ ì™„ë£Œ ì‹œ í˜¸ì¶œë˜ëŠ” ì½œë°±í•¨ìˆ˜
+// Å°¿öµå °Ë»ö ¿Ï·á ½Ã È£ÃâµÇ´Â Äİ¹éÇÔ¼ö
 function placesSearchCB (data, status, pagination) {
     if (status === daum.maps.services.Status.OK) {
 	if(stop == 1 && data.length != 10);
