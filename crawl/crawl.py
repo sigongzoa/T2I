@@ -26,12 +26,12 @@ def crawl(district_name, restaurant_list,see_status=False,  thread_cnt=1,   mini
         'kwd_dict'              :   dictionary      /   해시태그
             ex)     'kwd_dict': {'분위기': ['이국적', '아기자기'], '인기토픽': ['치킨'], '찾는목적': ['숨은맛집']}
         'age_percent_list'      :   list[int(6)]    /   10,20,30,40,50,60대 퍼센트
-        'category_list'         :   list[string]    /   음식 장르, 주력 음식
+        'prime_menu'            :   list[string]    /   음식 장르, 주력 음식
         'phone'                 :   string          /   전번
         'time_list'             :   list[string]    /   운영시간 정보
         'major_menu_price_int'  :   int             /   주메뉴 가격
-        'menu_price_dict'       :   dictionary      /   {메뉴(string): 가격(int)}
-
+        'menu_price_dict'       :   dictionary      /   {메뉴(string): 가격(int)}        
+        'category'              :   string          /   음식점 종류   ex) korean, western, japan, etc
     '''
     # output value
     restaurant_info_list = []
@@ -49,6 +49,11 @@ def crawl(district_name, restaurant_list,see_status=False,  thread_cnt=1,   mini
     threadList=[]
     for i in range(thread_cnt):
         threadList.append("Thread-%d"%i)
+    korean=['만두','칼국수','쭈꾸미','족발','보쌈''육류','돼지고기구이','소고기구이','갈비탕','백반','한식','죽','고기요리','닭발','국밥','두부요리','곰탕','설렁탕','닭갈비','국수','향토','찜닭','곱창','막창','낙지요리']
+
+    western=['스테이크','그리스','터키','립','양식','스파게티','파스타','프랑스','멕시코','남미','이탈리아','스페인','햄버거']
+
+    japan=['라면','일본','우동','소바','일식','돈가스','라면','초밥','롤','카레','샤브샤브','덮밥','오니기리']
 
 
     class myThread(threading.Thread):
@@ -152,8 +157,23 @@ def crawl(district_name, restaurant_list,see_status=False,  thread_cnt=1,   mini
                 # 식당 음식종류
                 theme_kwd_area = soup.select('div.content > div.ct_box_area > div.biz_name_area > span.category')
                 for n in theme_kwd_area:
-                    restaurant_info_list[idx]['category_list'] = n.text.strip().split(',')
-
+                    restaurant_info_list[idx]['prime_menu'] = n.text.strip().split(',')
+                
+                # 식당종류 분류
+                if 'prime_menu' in restaurant_info_list[idx]:
+                    genre='etc'
+                    for genre in restaurant_info_list[idx]['prime_menu']:
+                        if genre in korean:
+                            genre='korean'
+                            break
+                        elif genre in western:                            
+                            genre='western'
+                            break
+                        elif genre in japan:                            
+                            genre='japan'
+                            break
+                    restaurant_info_list[idx]['category']=genre
+                    
                 # 전화번호
                 theme_kwd_area = soup.select('#content > div.ct_box_area > div.bizinfo_area > div.list_bizinfo > div.list_item.list_item_biztel > div')
                 for n in theme_kwd_area:
