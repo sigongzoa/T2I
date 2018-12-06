@@ -162,14 +162,14 @@ def crawl(district_name, restaurant_list,see_status=False,  thread_cnt=1,   mini
                 # 식당종류 분류
                 if 'prime_menu' in restaurant_info_list[idx]:
                     genre='etc'
-                    for genre in restaurant_info_list[idx]['prime_menu']:
-                        if genre in korean:
+                    for menu in restaurant_info_list[idx]['prime_menu']:
+                        if menu in korean:
                             genre='korean'
                             break
-                        elif genre in western:                            
+                        elif menu in western:                            
                             genre='western'
                             break
-                        elif genre in japan:                            
+                        elif menu in japan:                            
                             genre='japan'
                             break
                     restaurant_info_list[idx]['category']=genre
