@@ -2,11 +2,19 @@ from django.db import models
 from decimal import Decimal
 from django.contrib.auth.models import User
 
-class tblDemograph(models.Model):
-    dbID = models.CharField(max_length=12,primary_key=True,unique=True)
-    NoDemo = models.DecimalField(max_digits=10, decimal_places=0)
-    Hospital = models.DecimalField(max_digits=1, decimal_places=0)
-    DoB = models.DateField()
-    Sex = models.DecimalField(max_digits=1,decimal_places=0)
-    Marital_Status = models.DecimalField(max_digits=1, decimal_places=0)
-    Rehab_Setting = models.DecimalField(max_digits=1, decimal_places=0)
+
+class Restaurant(models.Model):
+    name = models.CharField(primary_key=True, unique=True)
+    age10 = models.DecimalField()
+    age20 = models.DecimalField()
+    age30 = models.DecimalField()
+    age40 = models.DecimalField()
+    age50 = models.DecimalField()
+    age60 = models.DecimalField()
+    female = models.DecimalField()
+    male = models.DecimalField()
+    rating = models.FloatField()
+    category = models.DecimalField()
+    price = models.DecimalField()
+
+
