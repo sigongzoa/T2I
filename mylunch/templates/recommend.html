@@ -21,10 +21,37 @@
 
                     var mapContainer = document.getElementById('map'), mapOption = {center: locPosition,};
                     var map = new daum.maps.Map(mapContainer, mapOption);
+			
+		    // 현재위치 주소로 표시
+		    var geocoder = new daum.maps.services.Geocoder();
+		    var geocoderCB = function(result, status) {
+		        if (status === daum.maps.services.Status.OK) {
+		            total.push(result[0].address.region_1depth_name+' '+result[0].address.region_2depth_name+' '+result[0].address.region_3depth_name+'<br>');
+		        }
+		    };
+		    geocoder.coord2Address(locPosition.getLng(), locPosition.getLat(), geocoderCB);
+			
+			
+		    var distance = document.getElementById("id_distance").value;
+		    var true_distance
+
+		    if(distance == 1)
+	    		true_distance = 20000;	// 거리무관
+		    if(distance == 2)
+	    		true_distance = 180;	// 5분이내
+		    if(distance == 3)
+	    		true_distance = 225;	// 10분이내
+		    if(distance == 4)
+	    		true_distance = 270;	// 15분이내
+		    if(distance == 5)
+	    		true_distance = 315;	// 20분이내
+		    if(distance == 6)
+	    		true_distance = 400;	// 25분이내
+			
                     // 음식점을 검색
                     var ps = new daum.maps.services.Places(map);
                     for(var i=1; i<10; i++) {
-                        ps.categorySearch('FD6', placesSearchCB, {useMapCenter:true,radius:200,size:10,page:i,sort:daum.maps.services.SortBy.POPULARITY});
+                        ps.categorySearch('FD6', placesSearchCB, {useMapCenter:true,radius:true_distance,size:10,page:i,sort:daum.maps.services.SortBy.POPULARITY});
                     }
                     console.log(total);
                 });
