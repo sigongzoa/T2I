@@ -31,22 +31,16 @@
 		    };
 		    geocoder.coord2Address(locPosition.getLng(), locPosition.getLat(), geocoderCB);
 			
-			
+
 		    var distance = document.getElementById("id_distance").value;
 		    var true_distance
 
-		    if(distance == 1)
-	    		true_distance = 20000;	// 거리무관
-		    if(distance == 2)
-	    		true_distance = 180;	// 5분이내
-		    if(distance == 3)
-	    		true_distance = 225;	// 10분이내
-		    if(distance == 4)
-	    		true_distance = 270;	// 15분이내
-		    if(distance == 5)
-	    		true_distance = 315;	// 20분이내
-		    if(distance == 6)
-	    		true_distance = 400;	// 25분이내
+		    if(distance == 1) true_distance = 20000;	// 거리무관
+		    if(distance == 2) true_distance = 180;	// 5분이내
+		    if(distance == 3) true_distance = 225;	// 10분이내
+		    if(distance == 4) true_distance = 270;	// 15분이내
+		    if(distance == 5) true_distance = 315;	// 20분이내
+		    if(distance == 6) true_distance = 400;	// 25분이내
 			
                     // 음식점을 검색
                     var ps = new daum.maps.services.Places(map);
