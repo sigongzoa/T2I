@@ -5,7 +5,8 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from mylunch.forms import *
 from crawl.WEB_crawling import crawl
-
+from mylunch.models import *
+import json
 
 def index(request):
     template = get_template('root.html')
@@ -36,8 +37,6 @@ def rec_page(request):
                 print(crawl_list)
                 print(dis_list)
                 #tblDemograph.objects.create(dbID=dbID[request.user], NoDemo=NoDemo, DoB=DoB, Sex=Sex, Marital_Status=Marital_Status, Rehab_Setting=Rehab_Setting)
-                info = crawl('서강대', crawl_list, 'phantomjs-2.1.1-windows/bin/phantomjs')
-                print(info)
                 return redirect('/')
     else:
         form_data = Filter_form()
@@ -47,17 +46,47 @@ def rec_page(request):
     return HttpResponse(template.render(context))
 
 
-def test(request):
-    template = get_template('test.html')
+def save_db(request):
+    template = get_template('recommend.html')
     #if not request.user.is_authenticated:
     #    return redirect('/user/login/')
+    crawl_list = []
+    dis_list = []
     if request.method == 'POST':
-        print(request.POST)
-        form_data = test_form(request.POST)
+        #print(request.POST)
+        form_data = Filter_form(request.POST)
         if form_data.is_valid():
-            sex = form_data.cleaned_data['sex']
-            print(sex)
+                type = form_data.cleaned_data['type']
+                price = form_data.cleaned_data['price']
+                exp = form_data.cleaned_data['exp']
+                distance = form_data.cleaned_data['distance']
+                print(type, price, exp, distance)
+                print(len(request.POST) - 6)
+                for i in range(1, len(request.POST) - 6):
+                    name, dis = request.POST[str(i)].split(',')
+                    crawl_list.append(name)
+                    dis_list.append(dis)
+                print(crawl_list)
+                print(dis_list)
+                print(request.POST['0'])
+                #tblDemograph.objects.create(dbID=dbID[request.user], NoDemo=NoDemo, DoB=DoB, Sex=Sex, Marital_Status=Marital_Status, Rehab_Setting=Rehab_Setting)
+                info = crawl(request.POST['0'], crawl_list, 'phantomjs-2.1.1-windows/bin/phantomjs')
+                for item in info:
+                    print(item)
+                    try:
+                        obj = Restaurant.objects.get(name=item['input_name'])
+                    except:
+                        age = item['age_percent_list']
+                        gender = item['gender_ratio_list']
+                        print(age, gender)
+                        Restaurant.objects.create(name=item['input_name'], age10=age[0], age20=age[1], age30=age[2],
+                                                  age40=age[3], age50=age[4], age60=age[5], female=gender[0], male=gender[1],
+                                                  rating=item['rating'], category=item['category'], price=item['major_menu_price_int'])
 
-    context = {}
+                return redirect('/')
+    else:
+        form_data = Filter_form()
+
+    context = {'filter': form_data}
     context.update(csrf(request))
     return HttpResponse(template.render(context))

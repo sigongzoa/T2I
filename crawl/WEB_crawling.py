@@ -134,6 +134,7 @@ def crawl(district_name, restaurant_list, phantom_path, see_status=False, thread
                         last_chance_set.add(data)
                         workQueue.put(data)
                         continue
+                    continue
 
                 # 키워드 항목 분류
                 theme_kwd_area = soup.select('div.theme_kwd_area >  ul.list_theme > li.list_item > strong.tit')
@@ -167,7 +168,7 @@ def crawl(district_name, restaurant_list, phantom_path, see_status=False, thread
                     gender_ratio.append(int(n.text.strip()))
                     restaurant_info_list[idx]['gender_ratio_list'] = gender_ratio
                 if 'gender_ratio_list' not in restaurant_info_list[idx]:
-                    restaurant_info_list[idx]['gender_ratio_list']=-1
+                    restaurant_info_list[idx]['gender_ratio_list']=[-1, -1]
 
                 # 식당 음식종류
                 theme_kwd_area = soup.select('div.content > div.ct_box_area > div.biz_name_area > span.category')
@@ -320,25 +321,8 @@ def crawl(district_name, restaurant_list, phantom_path, see_status=False, thread
 
     # 빈사전 삭제
     restaurant_info_list = list(filter(None, restaurant_info_list))
-    dummy=[]
-    for dic in restaurant_info_list:
-        flg=True
-        for key in necessary_key:
-            if key not in dic:
-                flg=False
-                if (see_status):
-                    print(key,'없음 in ',dic)
-                break
-        if flg:
-            dummy.append(dic)
-    restaurant_info_list=dummy
-    dummy = restaurant_list.copy()
-    # 정보없는것 모으기
-    for dic in restaurant_info_list:
-        if dic['input_name'] in restaurant_list:
-            dummy.remove(dic['input_name'])
 
-    return restaurant_info_list,dummy
+    return restaurant_info_list
 
 
 if __name__ == "__main__":

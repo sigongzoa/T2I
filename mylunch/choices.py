@@ -25,5 +25,6 @@ DISTANCE=(
     (Decimal('2'), '5분 이내'),
     (Decimal('3'), '10분 이내'),
     (Decimal('4'), '15분 이내'),
-    (Decimal('5'), '15분 이상'),
+    (Decimal('5'), '20분 이내'),
+    (Decimal('6'), '25분 이내'),
 )
