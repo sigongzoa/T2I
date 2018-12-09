@@ -36,7 +36,7 @@ def rec_page(request):
                 print(crawl_list)
                 print(dis_list)
                 #tblDemograph.objects.create(dbID=dbID[request.user], NoDemo=NoDemo, DoB=DoB, Sex=Sex, Marital_Status=Marital_Status, Rehab_Setting=Rehab_Setting)
-                info = crawl('서강대', 'phantomjs-2.1.1-windows/bin/phantomjs', crawl_list)
+                info = crawl('서강대', crawl_list, 'phantomjs-2.1.1-windows/bin/phantomjs')
                 print(info)
                 return redirect('/')
     else:
