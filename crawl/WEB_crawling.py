@@ -13,10 +13,11 @@ import time
 import Lib.queue as Queue
 
 
-def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimum_time_limit=3,minimum_time_limit2=3):
+def crawl(district_name, restaurant_list,phantom_path, see_status=False, thread_cnt=1, minimum_time_limit=3,minimum_time_limit2=3):
     '''
     :param district_name:           string              / district name
     :param restaurant_list:         list[string]        /  restaurant name string list
+    :param phantom_path:            string              /  phantom js path
     :param see_status:              bool                / true:   see seconds ,   false:  don't   see
     :param thread_cnt:              int                 /  기본 스레드 갯수 1
     :param minimum_time_limit:      int                 /  네이버 최소 벤 피하기 시간 3초(실험완료)
@@ -59,8 +60,7 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
     western = ['스테이크', '그리스', '터키', '립', '양식', '스파게티', '파스타', '프랑스', '멕시코', '남미', '이탈리아', '스페인', '햄버거','핫도그']
     chinese = ['중식','양꼬치','짬뽕','짜장','탕수육','깐풍기','마라','북경',]
     japan = ['라면', '일본', '우동', '소바', '일식', '돈가스', '라면', '초밥', '롤', '카레', '샤브샤브', '덮밥', '오니기리','이자카야']
-    necessary_key=['age_percent_list','category','major_menu_price_int','gender_ratio_list','rating']#,'rating'
-    # necessary_key=['rating',]
+    necessary_key=['age_percent_list','category','major_menu_price_int','gender_ratio_list','rating']
 
     class myThread(threading.Thread):
         def __init__(self, threadID, name, q):
@@ -69,7 +69,7 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
             self.name = name
             self.q = q
             # phantomjs download link http://phantomjs.org/download.html
-            self.driver = webdriver.PhantomJS('/Users/han/Desktop/phantomjs-2.1.1-windows/bin/phantomjs')
+            self.driver = webdriver.PhantomJS(phantom_path)
             # # 암묵적으로 웹 자원 로드를 위해 3초까지 기다려 준다.
             self.driver.implicitly_wait(3)
 
@@ -88,7 +88,7 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
                 idx = name_to_idx[data]
                 start_time = time.time()
 
-                ##############################################################################################################
+                # 네이버 크롤링
                 try:
                     # 네이버 지도이동
                     driver.get('https://map.naver.com/')
@@ -150,12 +150,15 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
                     i += 1
                     restaurant_info_list[idx]['kwd_dict'] = kwd_dict
 
+
                 # 연령별 퍼센트 10,20,30,40,50,60
                 age_percent = []
                 theme_kwd_area = soup.select('div.bar_chart >  ul.list_vertical_bar > li.list_item > span.bar > span ')
                 for n in theme_kwd_area:
                     age_percent.append(int(float(n.text.strip()[:3])))
                     restaurant_info_list[idx]['age_percent_list'] = age_percent
+                if 'age_percent_list' not in restaurant_info_list[idx]:
+                    restaurant_info_list[idx]['age_percent_list']=[-1,-1,-1,-1,-1,-1]
 
                 # 여남 비율
                 theme_kwd_area = soup.select('g.c3-chart-arc > text[class]')
@@ -163,6 +166,8 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
                 for n in theme_kwd_area:
                     gender_ratio.append(int(n.text.strip()))
                     restaurant_info_list[idx]['gender_ratio_list'] = gender_ratio
+                if 'gender_ratio_list' not in restaurant_info_list[idx]:
+                    restaurant_info_list[idx]['gender_ratio_list']=-1
 
                 # 식당 음식종류
                 theme_kwd_area = soup.select('div.content > div.ct_box_area > div.biz_name_area > span.category')
@@ -186,6 +191,8 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
                             genre = 2
                             break
                     restaurant_info_list[idx]['category'] = genre
+                if 'category' not in restaurant_info_list[idx]:
+                    restaurant_info_list[idx]['category']=-1
 
                 # 전화번호
                 theme_kwd_area = soup.select(
@@ -208,8 +215,13 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
                     menu_price_list = []
                     for n in theme_kwd_area:
                         price_range = n.text.strip().replace('원', '').replace(',', '').split('~')
-                        price_range = [int(price) for price in price_range]
-                        menu_price_list.append(price_range)
+                        dummy=[]
+                        for price in price_range:
+                            try:
+                                dummy.append(int(price))
+                            except:
+                                dummy.append(-1)
+                        menu_price_list.append(dummy)
                     restaurant_info_list[idx]['major_menu_price_int'] = menu_price_list[0][0]
 
                     # 메뉴이름
@@ -221,17 +233,20 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
                         menu_price_dict[n.text.strip()] = menu_price_list[i][0]
                         i += 1
                     restaurant_info_list[idx]['menu_price_dict'] = menu_price_dict
+                if 'major_menu_price_int' not in restaurant_info_list[idx]:
+                    restaurant_info_list[idx]['major_menu_price_int']=-1
 
                 # 검색명
                 restaurant_info_list[idx]['input_name'] = data
 
-##############################################################################################################
                 # ban avoid
                 if (float(time.time() - start_time) + pretime < minimum_time_limit2+0.1):
                     if (see_status):
                         print('ban avoid#2 sleep {:2.2} sec'.format(minimum_time_limit2 - float(time.time() - start_time)-pretime))
                     time.sleep(minimum_time_limit2 +0.1- float(time.time() - start_time)-pretime)
                 midtime=time.time()
+                
+                # 망고플레이트 크롤링
                 try:
                     # 망플
                     driver.get('https://www.mangoplate.com/')
@@ -256,7 +271,12 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
                 elements = soup.select(
                     'body > main > article > div.column-wrapper > div > div > section > div.search-list-restaurants-inner-wrap > ul > li.list-restaurant.server_render_search_result_item > div > figure > figcaption > div > strong')
                 for n in elements:
-                    restaurant_info_list[idx]['rating'] = float(n.text.strip())
+                    try:
+                        restaurant_info_list[idx]['rating'] = float(n.text.strip())
+                    except:
+                        print('%s %s page rating convert %s error' % (name, data,n.text.strip()))
+                if 'rating' not in restaurant_info_list[idx]:
+                    restaurant_info_list[idx]['rating']=-1
 
                 print("{} processed {:10} / {:2.2} seconds ".format(name, data, (time.time() - start_time)))
                 # ban avoid
@@ -323,11 +343,54 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
 
 if __name__ == "__main__":
     # input value
-    district_name = '신촌'
-    restaurant_list = [ '라구식당', '한림돈가', '반서울', '완차이', '헌치브라운', '미스터서왕만두', '방콕익스프레스',
-                       '독수리다방', '소신이쏘', '야바이', '히노키공방', '맘맘테이블','충화반점','연남서식당','테스트용']
-
-    restaurant_info_list,restaurant_noinfo_list = crawl(district_name, restaurant_list, see_status=True)
+    district_name = '신수동'
+    restaurant_list = [ '을밀대 본점',
+'연남서식당',
+'조선초가한끼',
+'아소정 공덕본점',
+'옛맛서울불고기',
+'역전회관',
+'형제갈비',
+'신촌서서갈비',
+'꽃게랑새우랑',
+'통큰갈비 신촌본점',
+'이찌멘 신촌점',
+'여우골',
+'원마산아구찜 본관',
+'참나무본가',
+'생고기제작소 홍대점',
+'락희옥 마포본점',
+'가야밀면신촌칼국수',
+'로운샤브샤브 신촌점',
+'하누소 서강점',
+'원조조박집 본관',
+'군자네',
+'램랜드',
+'철길왕갈비살',
+'신촌해물칼국수',
+'죽해수산',
+'온달만두분식',
+'가야가야 이대점',
+'순남시래기 서강대점',
+'메이찬',
+'미분당',
+'부탄츄 신촌점',
+'청담동포장마차',
+'곰탕수육전문',
+'유닭스토리 신촌점',
+'미분당 신촌2호점',
+'소신이쏘',
+'매일스시횟집',
+'끼로끼로부엉이 노고산점',
+'홍대개미 신촌점',
+'찜수성찬 신촌본점',
+'이박사의신동막걸리',
+'계고기집',
+'쭈꾸미블루스 신촌본점',
+'블랑코 마포점',
+'발리비스트로',]
+    phantom_path='/Users/han/Desktop/phantomjs-2.1.1-windows/bin/phantomjs'
+    restaurant_info_list,restaurant_noinfo_list = crawl(district_name, restaurant_list,phantom_path, see_status=True)
 
     for rest in restaurant_info_list:
         print(rest)
