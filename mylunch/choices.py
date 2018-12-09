@@ -23,7 +23,7 @@ EXP=(
 DISTANCE=(
     (Decimal('1'), '무관'),
     (Decimal('2'), '5분 이내'),
-    (Decimal('3'), '5분 - 10분'),
-    (Decimal('4'), '10분 - 15분'),
+    (Decimal('3'), '10분 이내'),
+    (Decimal('4'), '15분 이내'),
     (Decimal('5'), '15분 이상'),
 )

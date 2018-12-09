@@ -9,7 +9,6 @@
 	    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d113de6f3e0c3ed1de827e1a8ff07e2f&libraries=services"></script>
         <script>
             var stop = 0;
-
             // geolocation을 사용할 수 있는지 확인
             if (navigator.geolocation) {
                 var total = [];
@@ -89,7 +88,7 @@
                     <th>{{ filter.distance }}</th>
                 </tr>
             </table>
-            <input name="edit" onclick="post_to_url('test',total,'POST')" class="button button1" type="submit" value="Edit_currunttbl"/>
+            <input name="edit" onclick="post_to_url('',total,'POST')" class="button button1" type="submit" value="추천"/>
         </form>
     </body>
 {%endblock%}
