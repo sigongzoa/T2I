@@ -13,7 +13,7 @@ import time
 import Lib.queue as Queue
 
 
-def crawl(district_name, restaurant_list,phantom_path, see_status=False, thread_cnt=1, minimum_time_limit=3,minimum_time_limit2=3):
+def crawl(district_name, restaurant_list, phantom_path, see_status=False, thread_cnt=1, minimum_time_limit=3,minimum_time_limit2=3):
     '''
     :param district_name:           string              / district name
     :param restaurant_list:         list[string]        /  restaurant name string list
