@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+음낭종띠
+<p><button onclick="post_to_url('test',{'sex':'whynot'},'POST')">test why not</button></p>
+<div id="out"></div>
+
+<script src="{{ STATIC_URL }} /static/jquery-3.3.1.js"></script>
+<script>
+    function getCookie(name) {
+        var cookieValue = null;
+        var output = document.getElementById("out");
+        if (document.cookie && document.cookie != '') {
+            output.innerHTML = 'debug4!!!!';
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                output.innerHTML = 'debug5!!!!';
+                var cookie = jQuery.trim(cookies[i]);
+                output.innerHTML = 'debug6!!!!';
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+
+    function post_to_url(path, params, method) {
+        method = method || "post"; // Set method to post by default if not specified.
+        var output = document.getElementById("out");
+
+        // The rest of this code assumes you are not using a library.
+        // It can be made less wordy if you use one.
+        var form = document.createElement("form");
+        form.setAttribute("method", method);
+        form.setAttribute("action", path);
+        for(var key in params) {
+            if(params.hasOwnProperty(key)) {
+                var hiddenField = document.createElement("input");
+                hiddenField.setAttribute("type", "hidden");
+                hiddenField.setAttribute("name", key);
+                hiddenField.setAttribute("value", params[key]);
+
+                form.appendChild(hiddenField);
+                output.innerHTML = hiddenField['value'];
+             }
+        }
+        csrfField = document.createElement("input");
+        output.innerHTML = 'debug2!!!!';
+        var csrftoken = getCookie('csrftoken')
+        output.innerHTML = 'debug3!!!!';
+        console.log("token" + csrftoken)
+        csrfField.setAttribute("type", "hidden");
+        csrfField.setAttribute("name", "csrfmiddlewaretoken");
+        csrfField.setAttribute("value", csrftoken)
+        form.appendChild(csrfField)
+
+        document.body.appendChild(form);
+        form.submit();
+
+
+    }
+
+</script>
+
+</body>
+</html>

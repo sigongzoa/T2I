@@ -1,0 +1,95 @@
+{%extends "template.html"%}
+{%block title%}Project M{%endblock%}
+
+{%block content%}
+    <body>
+        <p>HELLO THIS  SAMPLE PAGE FOR PROJECT EAT IT!</p>
+        <div id="map" style="width:500px;height:400px;"></div>
+        <div id="out"></div>
+	    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d113de6f3e0c3ed1de827e1a8ff07e2f&libraries=services"></script>
+        <script>
+            var stop = 0;
+
+            // geolocation을 사용할 수 있는지 확인
+            if (navigator.geolocation) {
+                var total = [];
+                // GeoLocation을 이용해서 접속 위치를 받아옴
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var lat = position.coords.latitude; // 위도
+                    var lon = position.coords.longitude; // 경도
+                    var locPosition = new daum.maps.LatLng(lat, lon); // 접속 위치 좌표 객체
+                    // 접속 위치를 중심으로하는 지도생성
+
+                    var mapContainer = document.getElementById('map'), mapOption = {center: locPosition,};
+                    var map = new daum.maps.Map(mapContainer, mapOption);
+                    // 음식점을 검색
+                    var ps = new daum.maps.services.Places(map);
+                    for(var i=1; i<10; i++) {
+                        ps.categorySearch('FD6', placesSearchCB, {useMapCenter:true,radius:200,size:10,page:i,sort:daum.maps.services.SortBy.POPULARITY});
+                    }
+                    console.log(total);
+                });
+            }
+            else {
+                document.write('geolocation을 사용할 수 없는 환경입니다.');
+            }
+
+            // 키워드 검색 완료 시 호출되는 콜백함수
+            function placesSearchCB (data, status, pagination) {
+                var output = document.getElementById("out");
+                if (status === daum.maps.services.Status.OK) {
+                if(stop == 1 && data.length != 10);
+
+                else {
+                    for (var i=0; i<data.length; i++) {
+                        total.push(data[i].place_name);
+                    }
+                }
+                if(data.length != 10)
+                    stop = 1;
+                }
+            }
+
+            function post_to_url(path, params, method) {
+                method = method || "post"; // Set method to post by default if not specified.
+
+                // The rest of this code assumes you are not using a library.
+                // It can be made less wordy if you use one.
+                var form = document.getElementById("sex");
+                for(var key in params) {
+                    if (params.hasOwnProperty(key)) {
+                        var hiddenField = document.createElement("input");
+                        hiddenField.setAttribute("type", "hidden");
+                        hiddenField.setAttribute("name", key);
+                        hiddenField.setAttribute("value", params[key]);
+
+                        form.appendChild(hiddenField);
+                    }
+                }
+            }
+        </script>
+        <form action="" method="POST" id="sex">
+        {% csrf_token %}
+            <h2>FILTER</h2>
+            <table>
+                <tr>
+                    <th>음식 종류</th>
+                    <th>{{ filter.type }}</th>
+                </tr>
+                <tr>
+                    <th>가격</th>
+                    <th>{{ filter.price }}</th>
+                </tr>
+                <tr>
+                    <th>성향</th>
+                    <th>{{ filter.exp }}</th>
+                </tr>
+                <tr>
+                    <th>거리</th>
+                    <th>{{ filter.distance }}</th>
+                </tr>
+            </table>
+            <input name="edit" onclick="post_to_url('test',total,'POST')" class="button button1" type="submit" value="Edit_currunttbl"/>
+        </form>
+    </body>
+{%endblock%}
