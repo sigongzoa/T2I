@@ -16,7 +16,8 @@
                 navigator.geolocation.getCurrentPosition(function(position) {
                     var lat = position.coords.latitude; // 위도
                     var lon = position.coords.longitude; // 경도
-                    var locPosition = new daum.maps.LatLng(lat, lon); // 접속 위치 좌표 객체
+                    //var locPosition = new daum.maps.LatLng(lat, lon); // 접속 위치 좌표 객체
+                    var locPosition = new daum.maps.LatLng(37.55, 126.94); // 접속 위치 좌표 객체
                     // 접속 위치를 중심으로하는 지도생성
 
                     var mapContainer = document.getElementById('map'), mapOption = {center: locPosition,};
@@ -26,11 +27,10 @@
 		    var geocoder = new daum.maps.services.Geocoder();
 		    var geocoderCB = function(result, status) {
 		        if (status === daum.maps.services.Status.OK) {
-		            total.push(result[0].address.region_1depth_name+' '+result[0].address.region_2depth_name+' '+result[0].address.region_3depth_name+'<br>');
+		            total.push(result[0].address.region_1depth_name+' '+result[0].address.region_2depth_name+' '+result[0].address.region_3depth_name);
 		        }
 		    };
 		    geocoder.coord2Address(locPosition.getLng(), locPosition.getLat(), geocoderCB);
-			
 
 		    var distance = document.getElementById("id_distance").value;
 		    var true_distance

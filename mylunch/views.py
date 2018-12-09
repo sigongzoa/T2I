@@ -4,6 +4,8 @@ from django.template.context_processors import csrf
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from mylunch.forms import *
+from crawl.WEB_crawling import crawl
+
 
 def index(request):
     template = get_template('root.html')
@@ -15,6 +17,7 @@ def rec_page(request):
     template = get_template('recommend.html')
     #if not request.user.is_authenticated:
     #    return redirect('/user/login/')
+    crawl_list = []
     if request.method == 'POST':
         #print(request.POST)
         form_data = Filter_form(request.POST)
@@ -24,9 +27,13 @@ def rec_page(request):
                 exp = form_data.cleaned_data['exp']
                 distance = form_data.cleaned_data['distance']
                 print(type, price, exp, distance)
+                print(len(request.POST) - 6)
                 for i in range(len(request.POST) - 6):
                     print(request.POST[str(i)])
+                    crawl_list.append(request.POST[str(i)])
                 #tblDemograph.objects.create(dbID=dbID[request.user], NoDemo=NoDemo, DoB=DoB, Sex=Sex, Marital_Status=Marital_Status, Rehab_Setting=Rehab_Setting)
+                info = crawl('서강대', crawl_list)
+                print(info)
                 return redirect('/')
     else:
         form_data = Filter_form()

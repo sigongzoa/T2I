@@ -13,7 +13,7 @@ import time
 import Lib.queue as Queue
 
 
-def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimum_time_limit=3,minimum_time_limit2=3):
+def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimum_time_limit=3, minimum_time_limit2=3):
     '''
     :param district_name:           string              / district name
     :param restaurant_list:         list[string]        /  restaurant name string list
@@ -55,11 +55,12 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
     for i in range(thread_cnt):
         threadList.append("Thread-%d" % i)
     korean = ['만두', '칼국수', '쭈꾸미', '족발', '보쌈''육류', '돼지고기구이', '소고기구이', '갈비탕', '백반', '한식', '죽', '고기요리', '닭발', '국밥', '두부요리',
-              '곰탕', '설렁탕', '닭갈비', '국수', '향토', '찜닭', '곱창', '막창', '낙지요리','분식']
-    western = ['스테이크', '그리스', '터키', '립', '양식', '스파게티', '파스타', '프랑스', '멕시코', '남미', '이탈리아', '스페인', '햄버거','핫도그']
-    chinese = ['중식','양꼬치','짬뽕','짜장','탕수육','깐풍기','마라','북경',]
-    japan = ['라면', '일본', '우동', '소바', '일식', '돈가스', '라면', '초밥', '롤', '카레', '샤브샤브', '덮밥', '오니기리','이자카야']
-    necessary_key=['age_percent_list','category','major_menu_price_int','gender_ratio_list','rating']#,'rating'
+              '곰탕', '설렁탕', '닭갈비', '국수', '향토', '찜닭', '곱창', '막창', '낙지요리', '분식']
+    western = ['스테이크', '그리스', '터키', '립', '양식', '스파게티', '파스타', '프랑스', '멕시코', '남미', '이탈리아', '스페인', '햄버거', '핫도그']
+    chinese = ['중식', '양꼬치', '짬뽕', '짜장', '탕수육', '깐풍기', '마라', '북경', ]
+    japan = ['라면', '일본', '우동', '소바', '일식', '돈가스', '라면', '초밥', '롤', '카레', '샤브샤브', '덮밥', '오니기리', '이자카야']
+    necessary_key = ['age_percent_list', 'category', 'major_menu_price_int', 'gender_ratio_list', 'rating']  # ,'rating'
+
     # necessary_key=['rating',]
 
     class myThread(threading.Thread):
@@ -69,7 +70,7 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
             self.name = name
             self.q = q
             # phantomjs download link http://phantomjs.org/download.html
-            self.driver = webdriver.PhantomJS('/Users/han/Desktop/phantomjs-2.1.1-windows/bin/phantomjs')
+            self.driver = webdriver.PhantomJS('phantomjs-2.1.1-windows/bin/phantomjs')
             # # 암묵적으로 웹 자원 로드를 위해 3초까지 기다려 준다.
             self.driver.implicitly_wait(3)
 
@@ -81,7 +82,7 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
                 print("Exiting " + self.name)
 
     def process_data(driver, name, q):
-        pretime=0
+        pretime = 0
         while not exitFlag:
             if not workQueue.empty():
                 data = q.get()
@@ -156,6 +157,8 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
                 for n in theme_kwd_area:
                     age_percent.append(int(float(n.text.strip()[:3])))
                     restaurant_info_list[idx]['age_percent_list'] = age_percent
+                if 'age_percent_list' not in restaurant_info_list[idx]:
+                    restaurant_info_list[idx]['age_percent_list'] = [-1, -1, -1, -1, -1, -1]
 
                 # 여남 비율
                 theme_kwd_area = soup.select('g.c3-chart-arc > text[class]')
@@ -163,6 +166,8 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
                 for n in theme_kwd_area:
                     gender_ratio.append(int(n.text.strip()))
                     restaurant_info_list[idx]['gender_ratio_list'] = gender_ratio
+                if 'gender_ratio_list' not in restaurant_info_list[idx]:
+                    restaurant_info_list[idx]['gender_ratio_list'] = -1
 
                 # 식당 음식종류
                 theme_kwd_area = soup.select('div.content > div.ct_box_area > div.biz_name_area > span.category')
@@ -186,6 +191,8 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
                             genre = 2
                             break
                     restaurant_info_list[idx]['category'] = genre
+                if 'category' not in restaurant_info_list[idx]:
+                    restaurant_info_list[idx]['category'] = -1
 
                 # 전화번호
                 theme_kwd_area = soup.select(
@@ -221,17 +228,20 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
                         menu_price_dict[n.text.strip()] = menu_price_list[i][0]
                         i += 1
                     restaurant_info_list[idx]['menu_price_dict'] = menu_price_dict
+                if 'major_menu_price_int' not in restaurant_info_list[idx]:
+                    restaurant_info_list[idx]['major_menu_price_int'] = -1
 
                 # 검색명
                 restaurant_info_list[idx]['input_name'] = data
 
-##############################################################################################################
+                ##############################################################################################################
                 # ban avoid
-                if (float(time.time() - start_time) + pretime < minimum_time_limit2+0.1):
+                if (float(time.time() - start_time) + pretime < minimum_time_limit2 + 0.1):
                     if (see_status):
-                        print('ban avoid#2 sleep {:2.2} sec'.format(minimum_time_limit2 - float(time.time() - start_time)-pretime))
-                    time.sleep(minimum_time_limit2 +0.1- float(time.time() - start_time)-pretime)
-                midtime=time.time()
+                        print('ban avoid#2 sleep {:2.2} sec'.format(
+                            minimum_time_limit2 - float(time.time() - start_time) - pretime))
+                    time.sleep(minimum_time_limit2 + 0.1 - float(time.time() - start_time) - pretime)
+                midtime = time.time()
                 try:
                     # 망플
                     driver.get('https://www.mangoplate.com/')
@@ -256,15 +266,21 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
                 elements = soup.select(
                     'body > main > article > div.column-wrapper > div > div > section > div.search-list-restaurants-inner-wrap > ul > li.list-restaurant.server_render_search_result_item > div > figure > figcaption > div > strong')
                 for n in elements:
-                    restaurant_info_list[idx]['rating'] = float(n.text.strip())
+                    try:
+                        restaurant_info_list[idx]['rating'] = float(n.text.strip())
+                    except:
+                        print('%s %s page rating convert %s error' % (name, data, n.text.strip()))
+                if 'rating' not in restaurant_info_list[idx]:
+                    restaurant_info_list[idx]['rating'] = -1
 
                 print("{} processed {:10} / {:2.2} seconds ".format(name, data, (time.time() - start_time)))
                 # ban avoid
                 if (float(time.time() - start_time) < minimum_time_limit):
                     if (see_status):
-                        print('ban avoid#1 sleep {:2.2} sec'.format(minimum_time_limit - float(time.time() - start_time)))
+                        print(
+                            'ban avoid#1 sleep {:2.2} sec'.format(minimum_time_limit - float(time.time() - start_time)))
                     time.sleep(minimum_time_limit - float(time.time() - start_time))
-                pretime=float(time.time()-midtime)
+                pretime = float(time.time() - midtime)
             else:
                 if (see_status):
                     print("%s is not processing " % (name))
@@ -300,34 +316,34 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
 
     # 빈사전 삭제
     restaurant_info_list = list(filter(None, restaurant_info_list))
-    dummy=[]
+    dummy = []
     for dic in restaurant_info_list:
-        flg=True
+        flg = True
         for key in necessary_key:
             if key not in dic:
-                flg=False
+                flg = False
                 if (see_status):
-                    print(key,'없음 in ',dic)
+                    print(key, '없음 in ', dic)
                 break
         if flg:
             dummy.append(dic)
-    restaurant_info_list=dummy
+    restaurant_info_list = dummy
     dummy = restaurant_list.copy()
     # 정보없는것 모으기
     for dic in restaurant_info_list:
         if dic['input_name'] in restaurant_list:
             dummy.remove(dic['input_name'])
 
-    return restaurant_info_list,dummy
+    return restaurant_info_list, dummy
 
 
 if __name__ == "__main__":
     # input value
     district_name = '신촌'
-    restaurant_list = [ '라구식당', '한림돈가', '반서울', '완차이', '헌치브라운', '미스터서왕만두', '방콕익스프레스',
-                       '독수리다방', '소신이쏘', '야바이', '히노키공방', '맘맘테이블','충화반점','연남서식당','테스트용']
+    restaurant_list = ['라구식당', '한림돈가', '반서울', '완차이', '헌치브라운', '미스터서왕만두', '방콕익스프레스',
+                       '독수리다방', '소신이쏘', '야바이', '히노키공방', '맘맘테이블', '충화반점', '연남서식당', '테스트용']
 
-    restaurant_info_list,restaurant_noinfo_list = crawl(district_name, restaurant_list, see_status=True)
+    restaurant_info_list, restaurant_noinfo_list = crawl(district_name, restaurant_list, see_status=True)
 
     for rest in restaurant_info_list:
         print(rest)
