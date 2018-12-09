@@ -1,0 +1,768 @@
+[INFO  - 2018-12-09T09:49:10.431Z] GhostDriver - Main - running on port 10362
+[INFO  - 2018-12-09T09:49:12.736Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2018-12-09T09:49:12.736Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.customHeaders:  - {}
+[INFO  - 2018-12-09T09:49:12.736Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2018-12-09T09:49:12.736Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: aedfb4d0-fb97-11e8-ae87-a36ed3888522
+[ERROR - 2018-12-09T09:49:19.325Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.325Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.325Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.325Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.326Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.326Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.326Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.326Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.326Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.326Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.327Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.327Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.327Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.327Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.327Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.327Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.328Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.328Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.328Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.328Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.328Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.328Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.328Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.329Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.329Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:19.329Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:24.128Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:24.128Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:24.129Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:24.129Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:24.130Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:24.130Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:24.130Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:24.130Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:24.130Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:24.130Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:24.131Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:24.131Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:24.131Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:24.131Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:24.132Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:24.132Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.236Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.237Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.237Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.237Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.238Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.238Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.238Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.238Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.238Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.238Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.239Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.239Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.239Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.239Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.239Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.239Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.240Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.240Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.240Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:29.240Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:34.249Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:34.249Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:34.250Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:34.250Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:34.250Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:34.250Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:34.250Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:34.251Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:34.251Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:34.251Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:34.251Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:34.251Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:34.252Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:34.252Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:34.252Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:34.252Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:39.242Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1544348979210
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.596Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.596Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.596Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.596Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.597Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.597Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.597Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.597Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.598Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.598Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.598Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.598Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.598Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.598Z] Session [aedfb4d0-fb97-11e8-ae87-a36ed3888522] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:12.737Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:12.737Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:12.737Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:12.737Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:12.737Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:12.738Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:12.738Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:12.738Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:12.738Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:12.738Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:12.738Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:12.738Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:12.739Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:12.739Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.093Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.094Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.094Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.094Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.094Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.094Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.095Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.095Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.095Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.095Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.095Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.095Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.096Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.096Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.096Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.096Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.096Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.096Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.096Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.096Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.097Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.097Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.097Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.097Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.097Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:18.097Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.309Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.310Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.310Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.310Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.310Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.310Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.311Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.311Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.311Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.311Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.312Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.312Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.312Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.312Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.313Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.313Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.313Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.313Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.313Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.313Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.314Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.314Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.314Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.314Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.315Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.315Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.315Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:23.315Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:28.623Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:28.623Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:28.623Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:28.623Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:28.624Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:28.624Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:28.624Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:28.624Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:28.624Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:28.624Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.947Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.947Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.948Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.948Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.948Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.948Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.948Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.948Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.949Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.949Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.949Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.949Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.949Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.950Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.950Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.950Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.950Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.950Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.951Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:33.951Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:39.697Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1544348979638
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.768Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.768Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.768Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.768Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.768Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.768Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.769Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.769Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.769Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.769Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.769Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.769Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.770Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.770Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.770Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.770Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.771Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.771Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.771Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.771Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.771Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.771Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.772Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.772Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.772Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - msg: [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-09T09:49:43.772Z] Session [9783f080-fb97-11e8-a79e-5ba80b701cd8] - page.onError - stack:
+  (anonymous function) (https://www.mangoplate.com/assets/dist/home.all.min-b803a3feec1e976575d2b47c1589e683a7f757d6ceff1738ae8ef3b9818e5273.js:4)
+
+  phantomjs://platform/console++.js:263 in error
