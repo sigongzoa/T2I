@@ -33,7 +33,7 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
         'time_list'             :   list[string]    /   운영시간 정보
         'major_menu_price_int'  :   int             /   주메뉴 가격
         'menu_price_dict'       :   dictionary      /   {메뉴(string): 가격(int)}
-        'category'              :   string          /   음식점 종류   ex) korean, western, japan, etc
+        'category'              :   int             /   음식점 종류   ex) 한(1),중(2),일(3),양(4),외(5)
         'gender_ratio_list'     :   list[int(2)]    /   여,남 비율
         'rating'                :   float           /   별점 5점만점 (출처 망플)
     '''
@@ -55,9 +55,10 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
     for i in range(thread_cnt):
         threadList.append("Thread-%d" % i)
     korean = ['만두', '칼국수', '쭈꾸미', '족발', '보쌈''육류', '돼지고기구이', '소고기구이', '갈비탕', '백반', '한식', '죽', '고기요리', '닭발', '국밥', '두부요리',
-              '곰탕', '설렁탕', '닭갈비', '국수', '향토', '찜닭', '곱창', '막창', '낙지요리']
-    western = ['스테이크', '그리스', '터키', '립', '양식', '스파게티', '파스타', '프랑스', '멕시코', '남미', '이탈리아', '스페인', '햄버거']
-    japan = ['라면', '일본', '우동', '소바', '일식', '돈가스', '라면', '초밥', '롤', '카레', '샤브샤브', '덮밥', '오니기리']
+              '곰탕', '설렁탕', '닭갈비', '국수', '향토', '찜닭', '곱창', '막창', '낙지요리','분식']
+    western = ['스테이크', '그리스', '터키', '립', '양식', '스파게티', '파스타', '프랑스', '멕시코', '남미', '이탈리아', '스페인', '햄버거','핫도그']
+    chinese = ['중식','양꼬치','짬뽕','짜장','탕수육','깐풍기','마라','북경',]
+    japan = ['라면', '일본', '우동', '소바', '일식', '돈가스', '라면', '초밥', '롤', '카레', '샤브샤브', '덮밥', '오니기리','이자카야']
     necessary_key=['age_percent_list','category','major_menu_price_int','gender_ratio_list','rating']#,'rating'
     # necessary_key=['rating',]
 
@@ -170,16 +171,19 @@ def crawl(district_name, restaurant_list, see_status=False, thread_cnt=1, minimu
 
                 # 식당종류 분류
                 if 'prime_menu' in restaurant_info_list[idx]:
-                    genre = 'etc'
+                    genre = 5
                     for menu in restaurant_info_list[idx]['prime_menu']:
                         if menu in korean:
-                            genre = 'korean'
+                            genre = 1
                             break
                         elif menu in western:
-                            genre = 'western'
+                            genre = 4
                             break
                         elif menu in japan:
-                            genre = 'japan'
+                            genre = 3
+                            break
+                        elif menu in chinese:
+                            genre = 2
                             break
                     restaurant_info_list[idx]['category'] = genre
 
