@@ -18,6 +18,7 @@ def rec_page(request):
     #if not request.user.is_authenticated:
     #    return redirect('/user/login/')
     crawl_list = []
+    dis_list = []
     if request.method == 'POST':
         #print(request.POST)
         form_data = Filter_form(request.POST)
@@ -28,12 +29,15 @@ def rec_page(request):
                 distance = form_data.cleaned_data['distance']
                 print(type, price, exp, distance)
                 print(len(request.POST) - 6)
-                for i in range(len(request.POST) - 6):
-                    print(request.POST[str(i)])
-                    crawl_list.append(request.POST[str(i)])
+                for i in range(1, len(request.POST) - 6):
+                    name, dis = request.POST[str(i)].split(',')
+                    crawl_list.append(name)
+                    dis_list.append(dis)
+                print(crawl_list)
+                print(dis_list)
                 #tblDemograph.objects.create(dbID=dbID[request.user], NoDemo=NoDemo, DoB=DoB, Sex=Sex, Marital_Status=Marital_Status, Rehab_Setting=Rehab_Setting)
-                info = crawl('서강대', crawl_list)
-                print(info)
+                #info = crawl('서강대', crawl_list)
+                #print(info)
                 return redirect('/')
     else:
         form_data = Filter_form()
