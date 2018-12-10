@@ -121,8 +121,8 @@ def recommend(temp_candi,USER,user_filter):
 
     # gender 0:남/1:여 선호비율/10의 점수를 얻음
     for x in candi:
-        if USER.UserInfo.gender < 0:     x['score'] += 5
-        elif USER.UserInfo.gender:       x['score'] += x['female']/10
+        if x['male'] < 0:               x['score'] += 5
+        elif USER.UserInfo.gender:      x['score'] += x['female']/10
         else:                           x['score'] += x['male']/10
 
 
@@ -156,6 +156,10 @@ def recommend(temp_candi,USER,user_filter):
     for x in candi:
         total_hitrate += x['hitrate']
         if total_hitrate > random_num:
-            return x['name']
+            return x
         
-# output : 랜덤하게 선택된 한개의 식당이름(string)
+# output : 랜덤하게 선택된 한개의 식당정보
+# {'name': '김가네 서강대점', 'distance': 173, 'score': 55.5, 'category': 1, 'price': 35000,
+#  'age10': 30, 'age20': 80, 'age30': 60, 'age40': 20, 'age50': 10, 'male': 55, 'female': 45, 'rating': 4.0,
+#  'partial_price': 4, 'partial_distance': 2, 'hitrate': 28.864894795127352}
+# 이런 dictionary 형태임
