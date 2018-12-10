@@ -1,5 +1,5 @@
 ### 추천버튼 눌렀을때 실행될 모듈 ###
-
+from mylunch.models import Restaurant
 import random
 
 # filter option
@@ -20,7 +20,9 @@ import random
 def recommend(temp_candi, USER, user_filter):
     temp_candi2 = []
     candi = []
-
+    temp = Restaurant.objects.all()
+    for place in temp:
+        print(place.name)
     # 후보군 생성
     for x in temp_candi:
         x['score'] = 0
