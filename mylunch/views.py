@@ -45,9 +45,12 @@ def rec_page(request):
                     temp['distance'] = int(dis)
                     crawl_list.append(temp)
                 print(crawl_list)
-                print(request.user.userinfo)
+
                 result = recommend(crawl_list, request.user, filter)
-                print(result)
+                if result is False:
+                    print('해당하는 음식점이 없습니다.')
+                else:
+                    print(result['name'])
 
                 return redirect('rec')
     else:

@@ -20,20 +20,32 @@ import random
 def recommend(temp_candi, USER, user_filter):
     temp_candi2 = []
     candi = []
-    temp = Restaurant.objects.all()
-    for place in temp:
-        print(place.name)
+    db = Restaurant.objects.all()
+    #for place in temp:
+    #    print(place.name)
     # 후보군 생성
     for x in temp_candi:
-        x['score'] = 0
+        x['score'] = float(0)
         for y in db:
-            if x['name'] == y:                                  
-                x.update(db[y])
+            if x['name'] == y.name:
+                #x.update(y)
+                x['price'] = float(y.price)
+                x['category'] = float(y.category)
+                x['male'] = float(y.male)
+                x['female'] = float(y.female)
+                x['age10'] = float(y.age10)
+                x['age20'] = float(y.age20)
+                x['age30'] = float(y.age30)
+                x['age40'] = float(y.age40)
+                x['age50'] = float(y.age50)
+                x['age60'] = float(y.age60)
+                x['rating'] = float(y.rating)
+
             
         if 'category' in x:                                     # db에 존재하지 않는 음식점이라면 후보에서 제외
             if user_filter['category'] == 1:                    # 카테고리로 1차 필터링
                 temp_candi2.append(x)
-            elif x['category'] == user_filter['category']:      
+            elif x['category'] == float(user_filter['category'] - 1):
                 temp_candi2.append(x)
 
             
@@ -51,6 +63,7 @@ def recommend(temp_candi, USER, user_filter):
         elif x['distance'] < 270:   x['partial_distance'] = 3
         elif x['distance'] < 315:   x['partial_distance'] = 4
         elif x['distance'] < 400:   x['partial_distance'] = 5
+        else:   x['partial_distance'] = 6
 
 
     for x in temp_candi2:
@@ -66,15 +79,15 @@ def recommend(temp_candi, USER, user_filter):
     if user_filter['category'] == 1:
         for x in candi:
             if x['category'] == 1:
-                x['score'] += USER.UserInfo.category1
+                x['score'] += float(USER.userinfo.category1)
             if x['category'] == 2:
-                x['score'] += USER.UserInfo.category2
+                x['score'] += float(USER.userinfo.category2)
             if x['category'] == 3:
-                x['score'] += USER.UserInfo.category3
+                x['score'] += float(USER.userinfo.category3)
             if x['category'] == 4:
-                x['score'] += USER.UserInfo.category4
+                x['score'] += float(USER.userinfo.category4)
             if x['category'] == 5:
-                x['score'] += USER.UserInfo.category5
+                x['score'] += float(USER.userinfo.category5)
 
 
 
@@ -85,45 +98,47 @@ def recommend(temp_candi, USER, user_filter):
             if x['partial_price'] == -1:
                 x['score'] += 10
             if x['partial_price'] == 1:
-                x['score'] += USER.UserInfo.price1
+                x['score'] += float(USER.userinfo.price1)
             if x['partial_price'] == 2:
-                x['score'] += USER.UserInfo.price2
+                x['score'] += float(USER.userinfo.price2)
             if x['partial_price'] == 3:
-                x['score'] += USER.UserInfo.price3
+                x['score'] += float(USER.userinfo.price3)
             if x['partial_price'] == 4:
-                x['score'] += USER.UserInfo.price4
+                x['score'] += float(USER.userinfo.price4)
                 
 
     # distance '무관' 선택시 모든 후보군에 성향 수치만큼 가산점
     if user_filter['distance'] == 1:
         for x in candi:
             if x['partial_distance'] == 1:
-                x['score'] += USER.UserInfo.distance1
+                x['score'] += float(USER.userinfo.distance1)
             if x['partial_distance'] == 2:
-                x['score'] += USER.UserInfo.distance2
+                x['score'] += float(USER.userinfo.distance2)
             if x['partial_distance'] == 3:
-                x['score'] += USER.UserInfo.distance3
+                x['score'] += float(USER.userinfo.distance3)
             if x['partial_distance'] == 4:
-                x['score'] += USER.UserInfo.distance4
+                x['score'] += float(USER.userinfo.distance4)
             if x['partial_distance'] == 5:
-                x['score'] += USER.UserInfo.distance5
+                x['score'] += float(USER.userinfo.distance5)
+            if x['partial_distance'] == 6:
+                x['score'] += 10
 
         
     # age 자신이 해당하는 나이대의 선호도/10을 점수로 얻음
     for x in candi:
         if x['age10'] < 0:      x['score'] += 5
-        elif USER.UserInfo.age < 10:     continue
-        elif USER.UserInfo.age < 20:     x['score'] += x['age10']/10
-        elif USER.UserInfo.age < 30:     x['score'] += x['age20']/10
-        elif USER.UserInfo.age < 40:     x['score'] += x['age30']/10
-        elif USER.UserInfo.age < 50:     x['score'] += x['age40']/10
-        elif USER.UserInfo.age < 60:     x['score'] += x['age50']/10
-
+        elif USER.userinfo.age < 10:     continue
+        elif USER.userinfo.age < 20:     x['score'] += x['age10']/10
+        elif USER.userinfo.age < 30:     x['score'] += x['age20']/10
+        elif USER.userinfo.age < 40:     x['score'] += x['age30']/10
+        elif USER.userinfo.age < 50:     x['score'] += x['age40']/10
+        elif USER.userinfo.age < 60:     x['score'] += x['age50']/10
+        elif USER.userinfo.age < 70:     x['score'] += x['age60']/10
 
     # gender 0:남/1:여 선호비율/10의 점수를 얻음
     for x in candi:
         if x['male'] < 0:               x['score'] += 5
-        elif USER.UserInfo.gender:      x['score'] += x['female']/10
+        elif USER.userinfo.gender:      x['score'] += x['female']/10
         else:                           x['score'] += x['male']/10
 
 
@@ -153,11 +168,12 @@ def recommend(temp_candi, USER, user_filter):
     # hitrate를 바탕으로 랜덤하게 식당을 선택
     total_hitrate = 0
     random_num = random.random() * 100
-    
+
     for x in candi:
         total_hitrate += x['hitrate']
         if total_hitrate > random_num:
             return x
+    return False
         
 # output : 랜덤하게 선택된 한개의 식당정보
 # {'name': '김가네 서강대점', 'distance': 173, 'score': 55.5, 'category': 1, 'price': 35000,
