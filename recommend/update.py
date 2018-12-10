@@ -46,21 +46,3 @@ def update(USER,result,command):
         if result['partial_distance'] == 3 & USER.UserInfo.distance3 > 5:  USER.UserInfo.distance3 -= 5
         if result['partial_distance'] == 4 & USER.UserInfo.distance4 > 5:  USER.UserInfo.distance4 -= 5
         if result['partial_distance'] == 5 & USER.UserInfo.distance5 > 5:  USER.UserInfo.distance5 -= 5
-
-    return command                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
