@@ -7,6 +7,7 @@ from mylunch.forms import *
 from crawl.WEB_crawling import crawl
 from mylunch.models import *
 import json
+from recommend.recommend import recommend
 
 def index(request):
     template = get_template('root.html')
@@ -31,14 +32,23 @@ def rec_page(request):
                 exp = form_data.cleaned_data['exp']
                 distance = form_data.cleaned_data['distance']
                 print(type, price, exp, distance)
+                filter = {}
+                filter['category'] = int(type)
+                filter['price'] = int(price)
+                filter['explore'] = int(exp)
+                filter['distance'] = int(distance)
                 print(len(request.POST) - 6)
                 for i in range(1, len(request.POST) - 6):
                     name, dis = request.POST[str(i)].split(',')
-                    crawl_list.append(name)
-                    dis_list.append(dis)
+                    temp = {}
+                    temp['name'] = name
+                    temp['distance'] = int(dis)
+                    crawl_list.append(temp)
                 print(crawl_list)
-                print(dis_list)
-                #tblDemograph.objects.create(dbID=dbID[request.user], NoDemo=NoDemo, DoB=DoB, Sex=Sex, Marital_Status=Marital_Status, Rehab_Setting=Rehab_Setting)
+                print(request.user.userinfo)
+                result = recommend(crawl_list, request.user, filter)
+                print(result)
+
                 return redirect('rec')
     else:
         form_data = Filter_form()

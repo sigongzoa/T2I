@@ -17,7 +17,7 @@ import random
 #                                                                            #
 ##############################################################################
 
-def recommend(temp_candi,USER,user_filter):
+def recommend(temp_candi, USER, user_filter):
     temp_candi2 = []
     candi = []
 
