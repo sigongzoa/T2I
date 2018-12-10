@@ -1,118 +1,174 @@
-{%extends "template.html"%}
-{%block title%}Project M{%endblock%}
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Raleway", Arial, Helvetica, sans-serif
+    }
+</style>
+{% load static %}
+<body class="w3-light-grey">
 
-{%block content%}
-    <body>
-        <p>HELLO THIS  SAMPLE PAGE FOR PROJECT EAT IT!</p>
-        <div id="map" style="width:500px;height:400px;"></div>
-        <div id="out"></div>
-	    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d113de6f3e0c3ed1de827e1a8ff07e2f&libraries=services"></script>
-        <script>
-            var stop = 0;
-            // geolocation을 사용할 수 있는지 확인
+    <!-- Navigation Bar -->
+    <div class="w3-bar w3-white w3-large">
+        <a href="#" class="w3-bar-item w3-button w3-red w3-mobile"><i class="fa fa-home w3-margin-right"></i>오늘뭐먹지</a>
+
+        <a href="/logout" class="w3-bar-item w3-button w3-right w3-grey w3-mobile">LOGOUT</a>
+    </div>
+
+    <header class="w3-display-container w3-content" style="max-width:1500px;">
+        <img class="w3-image" src="{% static 'images/main.jpg' %}" alt="The Hotel" width="2000" height="2000">
+
+        <div class="w3-display-left w3-padding w3-col l6 m8">
+
+    <p>HELLO THIS SAMPLE PAGE FOR PROJECT EAT IT!</p>
+    <div id="map" style="display: none;"></div>
+    <div id="out"></div>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d113de6f3e0c3ed1de827e1a8ff07e2f&libraries=services"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+        var type = 0;
+        var price = 0;
+        var exp = 0;
+        var distance = 1;
+
+        $(document).ready(function () {
+            /* OnChange Methods */
+            var typeId = document.getElementById('id_type');
+            typeId.addEventListener('change', function () {
+                type = typeId.selectedOptions[0].value
+            });
+
+            var priceId = document.getElementById('id_price');
+            priceId.addEventListener('change', function () {
+                price = priceId.selectedOptions[0].value
+            });
+
+            var expId = document.getElementById('id_exp');
+            expId.addEventListener('change', function () {
+                exp = expId.selectedOptions[0].value
+            });
+
+            var distanceId = document.getElementById('id_distance');
+            distanceId.addEventListener('change', function () {
+                distance = distanceId.selectedOptions[0].value;
+                console.log(distance)
+            })
+        });
+
+
+        /* OnClick Methods */
+        function recommandOnClick() {
+            var callBackCnt = 0;
+            var total = [];
+
             if (navigator.geolocation) {
-                var total = [];
-                // GeoLocation을 이용해서 접속 위치를 받아옴
-                navigator.geolocation.getCurrentPosition(function(position) {
+                navigator.geolocation.getCurrentPosition(function (position) {
                     var lat = position.coords.latitude; // 위도
                     var lon = position.coords.longitude; // 경도
-                    //var locPosition = new daum.maps.LatLng(lat, lon); // 접속 위치 좌표 객체
-                    var locPosition = new daum.maps.LatLng(37.55, 126.94); // 접속 위치 좌표 객체
-                    // 접속 위치를 중심으로하는 지도생성
+                    var locPosition = new daum.maps.LatLng(37.55, 126.94);
 
-                    var mapContainer = document.getElementById('map'), mapOption = {center: locPosition,};
-                    var map = new daum.maps.Map(mapContainer, mapOption);
-			
-                    // 현재위치 주소로 표시
                     var geocoder = new daum.maps.services.Geocoder();
-                    var geocoderCB = function(result, status) {
+                    var geocoderCB = function (result, status) {
                         if (status === daum.maps.services.Status.OK) {
                             total.push(result[0].address.region_3depth_name);
                         }
                     };
                     geocoder.coord2Address(locPosition.getLng(), locPosition.getLat(), geocoderCB);
 
-                    var distance = document.getElementById("id_distance").selectedOptions[0].value;;
-                    //var distance = selected.options[selected.selectedIndex].value;
-                    var true_distance
-                    console.log(distance);
-                    console.log(typeof distance);
-                    if(distance == 1) true_distance = 20000;	// 거리무관
-                    if(distance == 2) true_distance = 180;	// 5분이내
-                    if(distance == 3) true_distance = 225;	// 10분이내
-                    if(distance == 4) true_distance = 270;	// 15분이내
-                    if(distance == 5) true_distance = 315;	// 20분이내
-                    if(distance == 6) true_distance = 400;	// 25분이내
-                    console.log(distance);
-                    console.log(typeof distance);
-                    // 음식점을 검색
+                    var mapContainer = document.getElementById('map'), mapOption = { center: locPosition, };
+                    var map = new daum.maps.Map(mapContainer, mapOption);
                     var ps = new daum.maps.services.Places(map);
-                    for(var i=1; i<10; i++) {
-                        ps.categorySearch('FD6', placesSearchCB, {useMapCenter:true,radius:180,size:10,page:i,sort:daum.maps.services.SortBy.POPULARITY});
+
+                    var trueDistanceList = [0, 20000, 180, 225, 270, 315, 400];
+                    console.log(trueDistanceList[distance]);
+                    for (var i = 1; i < 10; i++) {
+                        ps.categorySearch('FD6', placesSearchCB, { useMapCenter: true, radius: trueDistanceList[distance], size: 10, page: i, sort: daum.maps.services.SortBy.POPULARITY });
                     }
-                    console.log(total);
                 });
             }
             else {
-                document.write('geolocation을 사용할 수 없는 환경입니다.');
+                console.log("Cannot Use Geolocation")
             }
 
-            // 키워드 검색 완료 시 호출되는 콜백함수
-            function placesSearchCB (data, status, pagination) {
-                var output = document.getElementById("out");
+            function placesSearchCB(data, status, pagination) {
                 if (status === daum.maps.services.Status.OK) {
-                if(stop == 1 && data.length != 10);
-
-                else {
-                    for (var i=0; i<data.length; i++) {
-                        total.push(data[i].place_name+','+data[i].distance);
+                    for (var i = 0; i < data.length; i++) {
+                        total.push(data[i].place_name + ',' + data[i].distance);
                     }
                 }
-                if(data.length != 10)
-                    stop = 1;
+
+                callBackCnt++;
+                if (callBackCnt == 9) {
+                    console.log(total);
+                    post_to_url('', total, 'POST')
                 }
             }
+        }
 
-            function post_to_url(path, params, method) {
-                method = method || "post"; // Set method to post by default if not specified.
+        // post to django server
+        function post_to_url(path, params, method) {
+            method = method || "post";
 
-                // The rest of this code assumes you are not using a library.
-                // It can be made less wordy if you use one.
-                var form = document.getElementById("sex");
-                for(var key in params) {
-                    if (params.hasOwnProperty(key)) {
-                        var hiddenField = document.createElement("input");
-                        hiddenField.setAttribute("type", "hidden");
-                        hiddenField.setAttribute("name", key);
-                        hiddenField.setAttribute("value", params[key]);
+            var form = document.getElementById("sex");
+            for (var key in params) {
+                if (params.hasOwnProperty(key)) {
+                    var hiddenField = document.createElement("input");
+                    hiddenField.setAttribute("type", "hidden");
+                    hiddenField.setAttribute("name", key);
+                    hiddenField.setAttribute("value", params[key]);
 
-                        form.appendChild(hiddenField);
-                    }
+                    form.appendChild(hiddenField);
                 }
             }
-        </script>
-        <form action="" method="POST" id="sex">
-        {% csrf_token %}
-            <h2>FILTER</h2>
-            <table>
-                <tr>
-                    <th>음식 종류</th>
-                    <th>{{ filter.type }}</th>
-                </tr>
-                <tr>
-                    <th>가격</th>
-                    <th>{{ filter.price }}</th>
-                </tr>
-                <tr>
-                    <th>성향</th>
-                    <th>{{ filter.exp }}</th>
-                </tr>
-                <tr>
-                    <th>거리</th>
-                    <th>{{ filter.distance }}</th>
-                </tr>
-            </table>
-            <input name="edit" onclick="post_to_url('',total,'POST')" class="button button1" type="submit" value="추천"/>
-        </form>
-    </body>
-{%endblock%}
+            form.submit();
+        }
+
+    </script>
+        <div class="w3-container w3-red">
+        <h2><i class="fa fa-info w3-margin-right"></i>FILTER</h2>
+        </div>
+            <div class="w3-container w3-white w3-padding-16">
+                    <form action="" method="POST" id="sex">
+                        {% csrf_token %}
+                         <div class="w3-row-padding" style="margin:0 -16px;">
+                        <div class="w3-half w3-margin-bottom">
+                            <label><i class="fa fa-id-badge"></i> 음식 종류</label>
+                            <h5>{{filter.type }}</h5>
+                            <!--<input class="w3-input w3-border" type="text" placeholder="SEX" name="NewID" required>-->
+                        </div>
+                        <div class="w3-half">
+                            <label><i class="fa fa-lock"></i> 가격</label>
+                            <h5>{{filter.price}}</h5>
+                            <!--<input class="w3-input w3-border" type="text" placeholder="WITH" name="NewPW" required>-->
+                        </div>
+                    </div>
+                    <div class="w3-row-padding" style="margin:8px -16px;">
+                        <div class="w3-half w3-margin-bottom">
+                            <label><i class="fa fa-check-square-o"></i> 성향</label>
+                            <h5>{{filter.exp}}</h5>
+                            <!--<input class="w3-input w3-border" type="number" value="1" name="NewAge" min="1" max="100">-->
+                        </div>
+                        <div class="w3-half">
+                            <label><i class="fa fa-intersex	"></i> 거리</label>
+                            <h5>{{filter.distance }}</h5>
+{#                            <input class="w3-input w3-border" type="number" value="0" name="NewSex" min="0" max="1">#}
+                        </div>
+                    </div>
+                        <button type="button" onclick="recommandOnClick()" class="w3-button w3-dark-grey w3-left w3-theme" placeholder="추천">추천</button>
+                    </form>
+            </div>
+        </div>
+    </header>
+</body>

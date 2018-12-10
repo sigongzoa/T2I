@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mylunch.apps.MylunchConfig',
+    'member',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

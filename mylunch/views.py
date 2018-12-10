@@ -15,6 +15,8 @@ def index(request):
 
 
 def rec_page(request):
+    if not request.user.is_authenticated:
+        return redirect('/')
     template = get_template('recommend.html')
     #if not request.user.is_authenticated:
     #    return redirect('/user/login/')
@@ -37,7 +39,7 @@ def rec_page(request):
                 print(crawl_list)
                 print(dis_list)
                 #tblDemograph.objects.create(dbID=dbID[request.user], NoDemo=NoDemo, DoB=DoB, Sex=Sex, Marital_Status=Marital_Status, Rehab_Setting=Rehab_Setting)
-                return redirect('/')
+                return redirect('rec')
     else:
         form_data = Filter_form()
 
@@ -72,7 +74,6 @@ def save_db(request):
                 #tblDemograph.objects.create(dbID=dbID[request.user], NoDemo=NoDemo, DoB=DoB, Sex=Sex, Marital_Status=Marital_Status, Rehab_Setting=Rehab_Setting)
                 info = crawl(request.POST['0'], crawl_list, 'phantomjs-2.1.1-windows/bin/phantomjs')
                 for item in info:
-                    print(item)
                     try:
                         obj = Restaurant.objects.get(name=item['input_name'])
                     except:
