@@ -10,7 +10,8 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import threading
 import time
-import Lib.queue as Queue
+# import Lib.queue as Queue
+from queue  import Queue
 
 
 def crawl(district_name, restaurant_list, phantom_path, see_status=False, thread_cnt=1, minimum_time_limit=3,minimum_time_limit2=3):
@@ -48,7 +49,8 @@ def crawl(district_name, restaurant_list, phantom_path, see_status=False, thread
     # thread_cnt=len(restaurant_list)//5
     start_time1 = time.time()
     exitFlag = 0
-    workQueue = Queue.Queue(len(restaurant_list))
+#     workQueue = Queue.Queue(len(restaurant_list))
+    workQueue = Queue(len(restaurant_list))
     name_to_idx = {}
     threads = []
     threadID = 0
