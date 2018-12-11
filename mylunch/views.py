@@ -8,6 +8,7 @@ from crawl.WEB_crawling import crawl
 from mylunch.models import *
 import json
 from recommend.recommend import recommend
+from django.urls import reverse
 
 def index(request):
     template = get_template('root.html')
@@ -19,10 +20,9 @@ def rec_page(request):
     if not request.user.is_authenticated:
         return redirect('/')
     template = get_template('recommend.html')
-    #if not request.user.is_authenticated:
-    #    return redirect('/user/login/')
+
     crawl_list = []
-    dis_list = []
+
     if request.method == 'POST':
         #print(request.POST)
         form_data = Filter_form(request.POST)
@@ -51,12 +51,34 @@ def rec_page(request):
                     print('해당하는 음식점이 없습니다.')
                 else:
                     print(result['name'])
-
-                return redirect('rec')
+                return result_page(request,result=result)
+                #return result_page(request, result=result)
     else:
         form_data = Filter_form()
 
     context = {'filter': form_data}
+    context.update(csrf(request))
+    return HttpResponse(template.render(context))
+
+
+def result_page(request, result):
+    if not request.user.is_authenticated:
+        return redirect('/')
+    template = get_template('result.html')
+
+    for key in result:
+        if key is not 'name' and key is not 'rating':
+            result[key] = int(result[key])
+
+    if request.method == 'POST':
+        if request.POST.get("yes"):
+            print('yes')
+            return redirect('rec')
+        elif request.POST.get("no"):
+            print('no')
+            return redirect('rec')
+
+    context = {'result': result}
     context.update(csrf(request))
     return HttpResponse(template.render(context))
 
