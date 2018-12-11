@@ -58,11 +58,11 @@ def recommend(temp_candi, USER, user_filter):
         else:                       x['partial_price'] = 4
 
     # 거리도 구간화
-        if x['distance'] < 180:     x['partial_distance'] = 1
-        elif x['distance'] < 225:   x['partial_distance'] = 2
-        elif x['distance'] < 270:   x['partial_distance'] = 3
-        elif x['distance'] < 315:   x['partial_distance'] = 4
-        elif x['distance'] < 400:   x['partial_distance'] = 5
+        if x['distance'] < 300:     x['partial_distance'] = 1
+        elif x['distance'] < 600:   x['partial_distance'] = 2
+        elif x['distance'] < 900:   x['partial_distance'] = 3
+        elif x['distance'] < 1200:   x['partial_distance'] = 4
+        elif x['distance'] < 1500:   x['partial_distance'] = 5
         else:   x['partial_distance'] = 6
 
 

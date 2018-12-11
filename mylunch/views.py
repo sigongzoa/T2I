@@ -6,9 +6,10 @@ from django.contrib.auth.models import User
 from mylunch.forms import *
 from crawl.WEB_crawling import crawl
 from mylunch.models import *
-import json
 from recommend.recommend import recommend
-from django.urls import reverse
+from mylunch import choices
+from recommend.update import update
+
 
 def index(request):
     template = get_template('root.html')
@@ -24,35 +25,32 @@ def rec_page(request):
     crawl_list = []
 
     if request.method == 'POST':
-        #print(request.POST)
         form_data = Filter_form(request.POST)
         if form_data.is_valid():
                 type = form_data.cleaned_data['type']
                 price = form_data.cleaned_data['price']
                 exp = form_data.cleaned_data['exp']
                 distance = form_data.cleaned_data['distance']
-                print(type, price, exp, distance)
+                #print(type, price, exp, distance)
                 filter = {}
                 filter['category'] = int(type)
                 filter['price'] = int(price)
                 filter['explore'] = int(exp)
                 filter['distance'] = int(distance)
-                print(len(request.POST) - 6)
+                #print(len(request.POST) - 6)
                 for i in range(1, len(request.POST) - 6):
                     name, dis = request.POST[str(i)].split(',')
                     temp = {}
                     temp['name'] = name
                     temp['distance'] = int(dis)
                     crawl_list.append(temp)
-                print(crawl_list)
+                #print(crawl_list)
 
                 result = recommend(crawl_list, request.user, filter)
                 if result is False:
-                    print('해당하는 음식점이 없습니다.')
-                else:
-                    print(result['name'])
-                return result_page(request,result=result)
-                #return result_page(request, result=result)
+                    result = {'name': '해당 정보에 맞는 식당이 없습니다'}
+                return result_page(request, result=result)
+
     else:
         form_data = Filter_form()
 
@@ -61,24 +59,62 @@ def rec_page(request):
     return HttpResponse(template.render(context))
 
 
-def result_page(request, result):
+def result_page(request, result={'name': 'dummy'}):
     if not request.user.is_authenticated:
         return redirect('/')
     template = get_template('result.html')
-
-    for key in result:
-        if key is not 'name' and key is not 'rating':
-            result[key] = int(result[key])
-
+    data = []
+    result_print = {'name': result['name']}
     if request.method == 'POST':
-        if request.POST.get("yes"):
+        if request.POST.get('yes') is not None:
+            temp = list(request.POST.get('yes'))
+            result['category'] = temp[0]
+            result['partial_price'] = temp[1]
+            result['partial_distance'] = temp[2]
+            update(request.user, result, 0)
             print('yes')
             return redirect('rec')
-        elif request.POST.get("no"):
+        elif request.POST.get('no') is not None:
+            temp = list(request.POST.get('yes'))
+            result['category'] = temp[0]
+            result['partial_price'] = temp[1]
+            result['partial_distance'] = temp[2]
+            update(request.user, result, 1)
             print('no')
             return redirect('rec')
 
-    context = {'result': result}
+    if result['name'] != '해당 정보에 맞는 식당이 없습니다':
+        for key in result:
+            if key is not 'name' and key is not 'rating':
+                result[key] = int(result[key])
+        for ch in choices.TYPE:
+            if Decimal(result['category']) + 1 == ch[0]:
+                result_print['category'] = ch[1]
+                data.append(str(int(result['category'])))
+                break
+        for ch in choices.PRICE:
+            if Decimal(result['partial_price']) + 1 == ch[0]:
+                result_print['partial_price'] = ch[1]
+                data.append(str(int(result['partial_price'])))
+                break
+
+        result_print['partial_distance'] = '30분 이내'
+        data.append(str(int(result['partial_distance'])))
+        for ch in choices.DISTANCE:
+            if Decimal(result['partial_distance']) + 1 == ch[0]:
+                result_print['partial_distance'] = ch[1]
+                data[-1] = str(int(result['partial_distance']))
+                break
+
+        if result['rating'] == -1:
+            result_print['rating'] = '정보 없음'
+        else:
+            result_print['rating'] = result['rating']
+    print(result)
+    print(data)
+    data = ''.join(data)
+    print(data)
+    context = {'result': result_print, 'data': data}
     context.update(csrf(request))
     return HttpResponse(template.render(context))
 

@@ -37,49 +37,39 @@
     <div class="w3-display-left w3-padding w3-hide-small" style="width:50%">
              <!--<div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">-->
               <div class="w3-black  w3-hover-opacity-off w3-padding-large w3-round-large">
-                <h1 class="w3-xlarge">갓상</h1>
+                <h1 class="w3-xlarge">{{ result.name }}</h1>
                   <hr class="w3-opacity">
-                <!--<p>종류 : 한식</p>-->
-                  <!--<p>가격 : 15000원</p>-->
-                  <!--<p>거리 : 15분이내</p>-->
-                  <!--<p>별점 : 3.9</p>-->
-              {{ result.name }}
-              {{ result.price }}
                   <div class="w3-row-padding" >
                         <div class=" w3-half ">
                             <label><i class="fa fa-id-badge"></i> 종류</label>
-                            <h5>중식</h5>
+                            <h5>{{ result.category }}</h5>
                         </div>
                         <div class="w3-half">
                             <label><i class="fa fa-credit-card	"></i> 가격</label>
-                            <h5>1만원 이내</h5>
+                            <h5>{{ result.partial_price }}</h5>
                         </div>
                     </div>
                     <div class="w3-row-padding">
                         <div class="w3-half ">
                             <label><i class="fa fa-star	"></i> 평점</label>
-                            <h5>5.0</h5>
+                            <h5>{{ result.rating }}</h5>
                         </div>
                         <div class="w3-half">
                             <label><i class="fa fa-hourglass"></i> 거리</label>
-                            <h5>5분 이내</h5>
+                            <h5>{{ result.partial_distance }}</h5>
                         </div>
                     </div>
                   <div class="w3-row-padding">
-                        <div class="w3-half ">
-                            <label><i class="material-icons"style="font-size:15px">&#xe561;</i> 주메뉴</label>
-                            <h5>짜장: 4000원</h5>
-                        </div>
-                        <div class="w3-half">
+                          <div class="w3-half">
                             <label><i class="fas">&#xf292;</i> 키워드</label>
                             <h5>#가성비, #JMT, #최저가</h5>
                         </div>
                     </div>
-                  <form action="" method="POST" id="sex">
+                  <form action="result" method="POST" id="sex">
                       {% csrf_token %}
                   <div class="w3-row-padding" >
-                <button class="w3-button  w3-green w3-round" name="yes" onclick="document.getElementById('download').style.display='block'">선택 </button>
-                  <button class="w3-button  w3-red w3-round" name="no" onclick="document.getElementById('download').style.display='block'">다른식당 추천  </button>
+                <button class="w3-button  w3-green w3-round" name="yes" value="{{ data }}" onclick="document.getElementById('download').style.display='block'">선택 </button>
+                  <button class="w3-button  w3-red w3-round" name="no"  value="{{ data }}" onclick="document.getElementById('download').style.display='block'">다른식당 추천  </button>
                   </div>
                   </form>
               </div>

@@ -27,11 +27,9 @@
     </div>
 
     <header class="w3-display-container w3-content" style="max-width:1500px;">
-        <img class="w3-image" src="{% static 'images/main.jpg' %}" alt="The Hotel" width="2000" height="2000">
+        <img class="w3-image" src="{% static 'images/main2.jpg' %}" alt="The Hotel" width="1500px" height="1500px">
+<div class="w3-display-left w3-padding w3-hide-small" style="width:50%">
 
-        <div class="w3-display-left w3-padding w3-col l6 m8">
-
-    <p>HELLO THIS SAMPLE PAGE FOR PROJECT EAT IT!</p>
     <div id="map" style="display: none;"></div>
     <div id="out"></div>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d113de6f3e0c3ed1de827e1a8ff07e2f&libraries=services"></script>
@@ -91,7 +89,7 @@
                     var map = new daum.maps.Map(mapContainer, mapOption);
                     var ps = new daum.maps.services.Places(map);
 
-                    var trueDistanceList = [0, 20000, 180, 225, 270, 315, 400];
+                    var trueDistanceList = [0, 1500, 300, 600, 900, 1200, 1500];
                     console.log(trueDistanceList[distance]);
                     for (var i = 1; i < 10; i++) {
                         ps.categorySearch('FD6', placesSearchCB, { useMapCenter: true, radius: trueDistanceList[distance], size: 10, page: i, sort: daum.maps.services.SortBy.POPULARITY });
@@ -136,39 +134,37 @@
         }
 
     </script>
-        <div class="w3-container w3-red">
-        <h2><i class="fa fa-info w3-margin-right"></i>FILTER</h2>
-        </div>
-            <div class="w3-container w3-white w3-padding-16">
-                    <form action="" method="POST" id="sex">
+        <div class="w3-black  w3-hover-opacity-off w3-padding-large w3-round-large">
+            <form action="" method="POST" id="sex">
                         {% csrf_token %}
-                         <div class="w3-row-padding" style="margin:0 -16px;">
-                        <div class="w3-half w3-margin-bottom">
-                            <label><i class="fa fa-id-badge"></i> 음식 종류</label>
-                            <h5>{{filter.type }}</h5>
-                            <!--<input class="w3-input w3-border" type="text" placeholder="SEX" name="NewID" required>-->
+            <h1 class="w3-xlarge">{{ result.name }}</h1>
+                  <hr class="w3-opacity">
+                  <div class="w3-row-padding" >
+                        <div class=" w3-half ">
+                            <label><i class="fa fa-id-badge"></i>종류</label>
+                            <h5>{{ filter.type }}</h5>
                         </div>
                         <div class="w3-half">
-                            <label><i class="fa fa-lock"></i> 가격</label>
-                            <h5>{{filter.price}}</h5>
-                            <!--<input class="w3-input w3-border" type="text" placeholder="WITH" name="NewPW" required>-->
+                            <label><i class="fa fa-credit-card	"></i>가격</label>
+                            <h5>{{ filter.price }}</h5>
                         </div>
                     </div>
-                    <div class="w3-row-padding" style="margin:8px -16px;">
-                        <div class="w3-half w3-margin-bottom">
-                            <label><i class="fa fa-check-square-o"></i> 성향</label>
-                            <h5>{{filter.exp}}</h5>
-                            <!--<input class="w3-input w3-border" type="number" value="1" name="NewAge" min="1" max="100">-->
+                    <div class="w3-row-padding">
+                        <div class="w3-half ">
+                            <label><i class="fa fa-star	"></i>성향</label>
+                            <h5>{{ filter.exp }}</h5>
                         </div>
                         <div class="w3-half">
-                            <label><i class="fa fa-intersex	"></i> 거리</label>
-                            <h5>{{filter.distance }}</h5>
-{#                            <input class="w3-input w3-border" type="number" value="0" name="NewSex" min="0" max="1">#}
+                            <label><i class="fa fa-hourglass"></i> 거리</label>
+                            <h5>{{ filter.distance }}</h5>
                         </div>
                     </div>
-                        <button type="button" onclick="recommandOnClick()" class="w3-button w3-dark-grey w3-left w3-theme" placeholder="추천">추천</button>
-                    </form>
-            </div>
+
+                  <div class="w3-row-padding" >
+                      <button type="button" onclick="recommandOnClick()" class="w3-button  w3-green w3-round" placeholder="추천">추천</button>
+
+                  </div>
+              </form>
         </div>
     </header>
 </body>
