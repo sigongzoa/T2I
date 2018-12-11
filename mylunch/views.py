@@ -9,12 +9,29 @@ from mylunch.models import *
 from recommend.recommend import recommend
 from mylunch import choices
 from recommend.update import update
+import json
 
-
-def index(request):
-    template = get_template('root.html')
-    context = {}
-    return HttpResponse(template.render(context))
+def copy_db(request):
+    db = []
+    for item in Restaurant.objects.all():
+        temp = {}
+        temp['name'] = str(item.name)
+        print(temp['name'])
+        temp['age10'] = int(item.age10)
+        temp['age20'] = int(item.age20)
+        temp['age30'] = int(item.age30)
+        temp['age40'] = int(item.age40)
+        temp['age50'] = int(item.age50)
+        temp['age60'] = int(item.age60)
+        temp['female'] = int(item.female)
+        temp['male'] = int(item.male)
+        temp['rating'] = float(item.rating)
+        temp['category'] = int(item.category)
+        temp['price'] = int(item.price)
+        db.append(temp)
+    with open('data.json', 'w', encoding='UTF-8-sig') as outfile:
+        json.dump(db, outfile, ensure_ascii=False)
+    return redirect('/')
 
 
 def rec_page(request):
